@@ -1,0 +1,158 @@
+import type { ProgressEvent, ResearchDetail, ResearchReport, SourceRecord } from "@/lib/types"
+
+export const SOURCES: SourceRecord[] = [
+  {
+    source_id: "S1",
+    title: "LangGraph persistence",
+    url: "https://docs.langchain.com/langgraph/persistence",
+    domain: "docs.langchain.com",
+    published_at: null,
+    retrieved_at: "2026-10-26T12:00:00Z",
+    snippet: "LangGraph has a built-in persistence layer.",
+    extracted_content: "LangGraph has a built-in persistence layer implemented through checkpointers.",
+    extraction_status: "extracted",
+    extraction_error: null,
+    source_type: "documentation",
+    search_query: "langgraph persistence",
+    subquestion_ids: ["Q1"],
+    search_score: 0.9,
+  },
+  {
+    source_id: "S2",
+    title: "2025 survey of data engineering teams",
+    url: "https://example-survey.org/2025",
+    domain: "example-survey.org",
+    published_at: "2025-03-01",
+    retrieved_at: "2026-10-26T12:00:00Z",
+    snippet: "62 percent of teams reported piloting AI agents.",
+    extracted_content: "",
+    extraction_status: "snippet_only",
+    extraction_error: "HTTP 403",
+    source_type: "other",
+    search_query: "data teams agents survey",
+    subquestion_ids: ["Q2"],
+    search_score: 0.8,
+  },
+]
+
+export const REPORT: ResearchReport = {
+  research_id: "r1",
+  title: "Agentic AI in Data Engineering",
+  question: "How is agentic AI changing data engineering?",
+  status: "completed_with_warnings",
+  executive_summary: "Agents are widely piloted [S2].",
+  report_markdown: [
+    "# Agentic AI in Data Engineering",
+    "## Executive summary",
+    "Agents are widely piloted [S2].",
+    "## Key findings",
+    "- Checkpointers persist state [S1].",
+    "- Most teams pilot agents [S1, S2].",
+    "### Detail",
+    "See [docs](https://example.com).",
+    "## References",
+    "- **[S1]** [LangGraph persistence](https://docs.langchain.com/langgraph/persistence)",
+  ].join("\n\n"),
+  sources: SOURCES,
+  evidence_matrix: {
+    claims: [
+      {
+        claim_id: "C1",
+        claim_text: "Checkpointers persist graph state.",
+        subquestion_id: "Q1",
+        source_ids: ["S1"],
+        supporting_evidence: ["persistence layer implemented through checkpointers"],
+        contradicting_evidence: [],
+        assessment: "established",
+        limitations: "",
+      },
+    ],
+    conflicts: ["Vendor figures disagree [S2]."],
+    gaps: [],
+    dropped_claims: 0,
+  },
+  critic: {
+    overall_assessment: "Mostly supported.",
+    issues: [
+      {
+        type: "weak_support",
+        severity: "medium",
+        description: "Snippet-only source.",
+        claim_text: "Most teams pilot agents",
+        source_ids: ["S2"],
+        recommendation: "Qualify.",
+        origin: "deterministic",
+      },
+    ],
+    unsupported_claims: [],
+    invalid_citations: [],
+    missing_coverage: [],
+    requires_revision: true,
+    requires_more_research: false,
+    follow_up_queries: [],
+    summary: "1 medium",
+  },
+  quality_assessment: {
+    status: "passed_with_warnings",
+    citation_count: 4,
+    valid_citation_count: 4,
+    invalid_citations_removed: [],
+    cited_source_count: 2,
+    distinct_cited_domains: 2,
+    uncited_factual_sentences: 0,
+    revision_cycles: 2,
+    unresolved_issues: [],
+    subquestion_coverage: { Q1: true, Q2: false },
+    notes: ["The revision limit (2) was reached with issues still open; this is the best available report."],
+  },
+  plan: {
+    objective: "Assess agentic AI in data engineering.",
+    subquestions: [
+      { id: "Q1", question: "How does LangGraph persist state?", search_queries: ["langgraph"], evidence_needed: "" },
+      { id: "Q2", question: "How widely are agents adopted?", search_queries: ["survey"], evidence_needed: "" },
+    ],
+    search_strategy: "",
+    methodology: "",
+    scope: "",
+    limitations: [],
+  },
+  created_at: "2026-10-26T12:00:00Z",
+  completed_at: "2026-10-26T12:05:00Z",
+}
+
+export function makeDetail(overrides: Partial<ResearchDetail> = {}): ResearchDetail {
+  return {
+    id: "r1",
+    question: "How is agentic AI changing data engineering?",
+    title: null,
+    status: "running",
+    depth: "standard",
+    current_stage: "researcher",
+    source_count: 0,
+    revision_count: 0,
+    created_at: "2026-10-26T12:00:00Z",
+    updated_at: "2026-10-26T12:00:00Z",
+    completed_at: null,
+    request: {
+      question: "How is agentic AI changing data engineering?",
+      depth: "standard",
+      include_domains: [],
+      exclude_domains: [],
+      start_date: null,
+      end_date: null,
+      max_sources_per_subquestion: null,
+    },
+    plan: null,
+    error: null,
+    warnings: [],
+    usage: { llm_calls: 1, input_tokens: 100, output_tokens: 50, search_calls: 0, pages_fetched: 0, fetch_failures: 0 },
+    elapsed_seconds: 12,
+    has_report: false,
+    ...overrides,
+  }
+}
+
+let nextId = 1
+export function event(type: string, node: string | null, message = type): ProgressEvent {
+  return { id: nextId++, research_id: "r1", type, node, message, data: {}, timestamp: "2026-10-26T12:00:00Z" }
+}

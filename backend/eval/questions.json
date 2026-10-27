@@ -1,0 +1,22 @@
+[
+  {"id": "tech-01", "category": "technical documentation", "question": "How does LangGraph implement persistence and checkpointing for long-running agent workflows?"},
+  {"id": "tech-02", "category": "technical documentation", "question": "What are the main differences between PostgreSQL logical replication and physical streaming replication?"},
+  {"id": "tech-03", "category": "technical documentation", "question": "How do Server-Sent Events compare with WebSockets for streaming updates from a web server to a browser?"},
+  {"id": "tech-04", "category": "technical documentation", "question": "What security protections does the Rust borrow checker provide and what classes of bugs does it not prevent?"},
+  {"id": "tech-05", "category": "technical documentation", "question": "How does Apache Iceberg handle schema evolution and time travel compared with Delta Lake?"},
+  {"id": "sci-01", "category": "science", "question": "What does current evidence say about the effectiveness of GLP-1 receptor agonists for long-term weight management?"},
+  {"id": "sci-02", "category": "science", "question": "How much has global mean sea level risen since 1993 and what are the main contributing factors?"},
+  {"id": "sci-03", "category": "science", "question": "What are the leading approaches to quantum error correction and how close are they to practical fault tolerance?"},
+  {"id": "sci-04", "category": "science", "question": "What is known about the health effects of microplastics in the human body?"},
+  {"id": "sci-05", "category": "science", "question": "How effective are perovskite solar cells today and what limits their commercial durability?"},
+  {"id": "biz-01", "category": "business", "question": "How is agentic AI changing data engineering teams and workflows?"},
+  {"id": "biz-02", "category": "business", "question": "What factors are driving the growth of the global market for small modular nuclear reactors?"},
+  {"id": "biz-03", "category": "business", "question": "How have remote and hybrid work policies affected commercial real estate vacancy rates in major US cities?"},
+  {"id": "biz-04", "category": "business", "question": "What are the main cost drivers of training and serving large language models for enterprises?"},
+  {"id": "biz-05", "category": "business", "question": "How are electric vehicle battery supply chains shifting away from concentrated sources of lithium and graphite?"},
+  {"id": "news-01", "category": "current events", "question": "What major AI regulations have taken effect in the European Union and what do they require of model providers?"},
+  {"id": "news-02", "category": "current events", "question": "What is the current state of global semiconductor export controls and how are affected companies responding?"},
+  {"id": "news-03", "category": "current events", "question": "What recent progress has been made toward commercial crewed lunar missions?"},
+  {"id": "news-04", "category": "current events", "question": "How have central banks in major economies adjusted interest rates over the past year and why?"},
+  {"id": "news-05", "category": "current events", "question": "What are the latest developments in international efforts to regulate deep-sea mining?"}
+]

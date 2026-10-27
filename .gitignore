@@ -1,0 +1,51 @@
+# ── Secrets ──────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+
+# ── Python (backend) ────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+backend/build/
+backend/dist/
+.coverage
+htmlcov/
+
+# ── Databases ───────────────────────────────────────────
+*.db
+*.db-shm
+*.db-wal
+*.sqlite3
+
+# ── Evaluation output ───────────────────────────────────
+backend/eval/results/
+
+# ── Node / Next.js (frontend) ───────────────────────────
+node_modules/
+.next/
+out/
+next-env.d.ts
+coverage/
+*.tsbuildinfo
+.vercel/
+
+# ── Logs ────────────────────────────────────────────────
+*.log
+npm-debug.log*
+
+# ── Local tool settings ─────────────────────────────────
+.claude/settings.local.json
+
+# ── OS / editors ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

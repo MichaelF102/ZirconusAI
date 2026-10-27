@@ -1,0 +1,6 @@
+# Runtime dependencies plus the test tools.
+# Install: pip install -r backend/requirements-dev.txt
+-r requirements.txt
+pytest==9.1.1
+pytest-asyncio==1.4.1
+respx==0.23.1

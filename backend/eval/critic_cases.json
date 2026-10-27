@@ -1,0 +1,27 @@
+{
+  "description": "Hand-labeled sentences with deliberately inserted unsupported claims. label=unsupported means a correct critic should flag the sentence; label=supported means it should not. Sources are short synthetic excerpts written for this test set.",
+  "sources": {
+    "S1": "LangGraph has a built-in persistence layer implemented through checkpointers. The checkpointer saves a checkpoint of the graph state at every super-step. Checkpoints are saved to a thread that can be accessed after execution.",
+    "S2": "In our 2025 survey of 400 data engineering teams, 62 percent reported piloting AI agents for pipeline maintenance. Only 18 percent had deployed agents in production, citing reliability and governance concerns.",
+    "S3": "Global mean sea level has risen about 10 centimetres since 1993, according to satellite altimetry. Thermal expansion of seawater and melting of glaciers and ice sheets are the main contributors.",
+    "S4": "Perovskite solar cells have reached certified laboratory efficiencies above 26 percent, but their long-term stability under heat and moisture remains a barrier to commercialisation."
+  },
+  "cases": [
+    {"id": "c01", "label": "supported", "sentence": "LangGraph checkpointers save a checkpoint of the graph state at every super-step [S1]."},
+    {"id": "c02", "label": "supported", "sentence": "Checkpoints are stored in a thread that remains accessible after execution [S1]."},
+    {"id": "c03", "label": "supported", "sentence": "In a 2025 survey of 400 data engineering teams, 62 percent reported piloting AI agents [S2]."},
+    {"id": "c04", "label": "supported", "sentence": "Only 18 percent of surveyed teams had deployed agents in production [S2]."},
+    {"id": "c05", "label": "supported", "sentence": "Satellite altimetry shows global mean sea level has risen about 10 centimetres since 1993 [S3]."},
+    {"id": "c06", "label": "supported", "sentence": "Thermal expansion and melting glaciers and ice sheets are the main contributors to sea level rise [S3]."},
+    {"id": "c07", "label": "supported", "sentence": "Perovskite cells have exceeded 26 percent certified laboratory efficiency [S4]."},
+    {"id": "c08", "label": "supported", "sentence": "Stability under heat and moisture remains a barrier to commercialising perovskite cells [S4]."},
+    {"id": "c09", "label": "unsupported", "sentence": "In the same survey, 75 percent of teams had deployed agents in production [S2]."},
+    {"id": "c10", "label": "unsupported", "sentence": "Global sea level has risen about 30 centimetres since 1993 [S3]."},
+    {"id": "c11", "label": "unsupported", "sentence": "LangGraph was originally developed by Google DeepMind for robotics control [S1]."},
+    {"id": "c12", "label": "unsupported", "sentence": "Perovskite modules already outlast silicon panels in rooftop deployments [S4]."},
+    {"id": "c13", "label": "unsupported", "sentence": "Agent adoption reduced data pipeline incidents by 40 percent across respondents [S2]."},
+    {"id": "c14", "label": "unsupported", "sentence": "Researchers found that agents reduce cloud costs by half for most enterprises."},
+    {"id": "c15", "label": "unsupported", "sentence": "LangGraph supports persistent state across workflow steps [S7]."},
+    {"id": "c16", "label": "unsupported", "sentence": "Ocean acidification is now the primary driver of sea level rise according to recent studies [S3]."}
+  ]
+}
